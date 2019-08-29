@@ -1,0 +1,6 @@
+{
+    "terminal.integrated.env.osx": {
+        "PATH": "/Users/apple/.platformio/penv/bin:/Users/apple/.platformio/penv://anaconda3/bin://anaconda3/condabin:.:/usr/Download/2019s1/comp5349/week5/apache-spark/2.2.0/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/bin:/Library/Java/JavaVirtualMachines/jdk1.8.0_101.jdk/Contents/Home/jre/bin:/Users/apple/Downloads/2019s1/comp5349/week4/hadoop-3.1.2/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/opt/X11/bin:/Library/Frameworks/Mono.framework/Versions/Current/Commands:/Applications/Wireshark.app/Contents/MacOS",
+        "PLATFORMIO_CALLER": "vscode"
+    }
+}
