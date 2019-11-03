@@ -1,0 +1,49 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Sleepbud</title>
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+	<link href="{% static 'css/sleepbud.css' %}" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="{%static 'js/bootstrap.min.js'%}"></script>
+	<script src="{%static 'js/validator.min.js'%}"></script>
+</head>
+
+<body>
+	{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<div class="container" style="padding-top: 20px">
+		<div class="card text-center">
+			<div class="card-header">
+				<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light"> -->
+
+				<ul class="nav nav-pills card-header-pills">
+					<li class="nav-item">
+						{%if tag == "input" %}
+						<a class="nav-link active" {%else%} <a class="nav-link" {%endif%}
+							href="{% url 'input' %}">Input<span class="sr-only">(current)</span></a>
+					</li>
+					<ul class="nav nav-pills card-header-pills">
+						<li class="nav-item">
+							{%if tag == "arduino" %}
+							<a class="nav-link active" {%else%} <a class="nav-link" {%endif%}
+								href="{% url 'arduino' %}">arduino<span class="sr-only">(current)</span></a>
+						</li>
+			</div>
+			<div class="card-body container">
+				{% block content %}
+				{% endblock %}
+			</div>
+			<div class="card-footer text-muted">
+				@Copyright ELEC5622 Group 1
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

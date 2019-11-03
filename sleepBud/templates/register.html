@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+<body>
+	{% block content %}
+	<div class="container">
+		<div class="card text-center">
+			<div class="card-header">
+				<h2> Healthome - Register </h2>
+			</div>
+			<div class="card-body container">
+				<form method="POST" action="{% url 'register' %}" role="form" data-toggle="validator">
+					{% csrf_token %}
+					<!-- References: http://1000hz.github.io/bootstrap-validator/ -->
+					<div class="form-group row">
+						<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+						<div class="col-sm-10">
+							<input type="email" class="form-control" id="inputEmail3" name="email" placeholder="Email"
+								required />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+						<div class="col-sm-10">
+							<input type="password" class="form-control" id="inputPassword" name="password"
+								placeholder="Password" required />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="confirmPassword" class="col-sm-2 col-form-label">Confirm Password</label>
+						<div class="col-sm-10">
+							<input type="password" class="form-control" id="confirmPassword"
+								placeholder="Confirm Password" data-match="#inputPassword"
+								data-match-error="Whoops, these passwords don't match" required />
+							<div class="help-block with-errors"></div>
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="firstName" class="col-sm-2 col-form-label">First Name</label>
+						<div class="col-sm-10">
+							<input type="input" class="form-control" id="firstName" name="firstname"
+								placeholder="First Name" required />
+						</div>
+					</div>
+					<div class="form-group row">
+						<label for="lastName" class="col-sm-2 col-form-label">Last Name</label>
+						<div class="col-sm-10">
+							<input type="input" class="form-control" id="lastName" name="lastname"
+								placeholder="Last Name" required />
+						</div>
+					</div>
+					<a class="btn btn-secondary" href="{% url 'index' %}">Back</a>
+					<button type="submit" class="btn btn-primary">Submit</button>
+				</form>
+			</div>
+			<div class="card-footer text-muted">
+
+			</div>
+		</div>
+	</div>
+	{% endblock %}
+</body>

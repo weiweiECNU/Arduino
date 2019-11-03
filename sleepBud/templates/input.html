@@ -1,0 +1,74 @@
+{% extends "sleep_base.html" %}
+{% load staticfiles %}
+
+<body>
+  {% block content %}
+  <h2> Welcome, {{user.first_name}} {{user.last_name}}</h2>
+  {% if message is not None %}
+  <div class="alert alert-success" role="alert">
+    {{message}}
+  </div>
+  {% endif %}
+  <form action="{% url 'input' %}" method="POST">
+    {% csrf_token %}
+    <div class="form-group row">
+      <label for="Snoring" class="col-sm-4 col-form-label">Snoring</label>
+      <div class="col-sm-4">
+        <input type="input" class="form-control" id="Snoring" name="Snoring" value="{{status.Snoring|floatformat}}" />
+      </div>
+      <div class="col-sm-4">
+        (1: Yes, 0: No)
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="BMI_30" class="col-sm-4 col-form-label">BMI > 30</label>
+      <div class="col-sm-4">
+        <input type="input" class="form-control" id="BMI_30" name="BMI_30" value="{{status.BMI_30|floatformat}}" />
+      </div>
+      <div class="col-sm-4">
+        (1: Yes, 0: No)
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="alcoholism" class="col-sm-4 col-form-label">Alcoholism</label>
+      <div class="col-sm-4">
+        <input type="input" class="form-control" id="alcoholism" name="alcoholism"
+          value="{{status.alcoholism|floatformat}}" />
+      </div>
+      <div class="col-sm-4">
+        (1: Yes, 0: No)
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="day_sleepy" class="col-sm-4 col-form-label">Daytime fatigue</label>
+      <div class="col-sm-4">
+        <input type="input" class="form-control" id="day_sleepy" name="day_sleepy"
+          value="{{status.day_sleepy|floatformat}}" />
+      </div>
+      <div class="col-sm-4">
+        (1: Yes, 0: No)
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="Irritability" class="col-sm-4 col-form-label">Irritability</label>
+      <div class="col-sm-4">
+        <input type="input" class="form-control" id="Irritability" name="Irritability"
+          value="{{status.Irritability|floatformat}}" />
+      </div>
+      <div class="col-sm-4">
+        (1: Yes, 0: No)
+      </div>
+    </div>
+    <div class="form-group row">
+      <label for="age" class="col-sm-4 col-form-label">Age</label>
+      <div class="col-sm-4">
+        <input type="input" class="form-control" id="age" name="age" value="{{status.age|floatformat}}" />
+      </div>
+      <div class="col-sm-4">
+        years
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Save</button>
+  </form>
+  {% endblock %}
+</body>

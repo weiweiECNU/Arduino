@@ -1,0 +1,43 @@
+{% extends "sleep_base.html" %}
+{% load staticfiles %}
+
+<body>
+	{% block content %}
+	<h2> Welcome, {{user.first_name}} {{user.last_name}}</h2>
+
+	<div class="card">
+		<div class="card-body">
+			<table class="table table-bordered table-light">
+				<thead>
+					<tr class="table-info">
+						<th scope="col">Snoring</th>
+						<th scope="col">BMI > 30</th>
+						<th scope="col">Alcoholism</th>
+						<th scope="col">Daytime fatigue</th>
+						<th scope="col">Irritability</th>
+						<th scope="col">Age</th>
+						<th scope="col">Body Temperature</th>
+						<th scope="col">Snore</th>
+						<th scope="col">Body Position</th>
+
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>{{BodyStatus.Snoring|floatformat}}</td>
+						<td>{{BodyStatus.BMI_30|floatformat}}</td>
+						<td>{{BodyStatus.alcoholism|floatformat}}</td>
+						<td>{{BodyStatus.day_sleepy|floatformat}}</td>
+						<td>{{BodyStatus.Irritability|floatformat}}</td>
+						<td>{{BodyStatus.age|floatformat}}</td>
+						<td>{{data.temp|floatformat}}</td>
+						<td>{{data.snore|floatformat}}</td>
+						<td>{{data.body_position|floatformat}}</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+	{% endblock %}
+</body>

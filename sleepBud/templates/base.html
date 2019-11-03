@@ -1,0 +1,23 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Sleepbud </title>
+	<link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+	<link href="{% static 'css/sleepbud.css' %}" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+	<script src="{%static 'js/bootstrap.min.js'%}"></script>
+	<script src="{%static 'js/validator.min.js'%}"></script>
+</head>
+
+<body>
+	{% load static %}
+
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	{% block content %}
+	{% endblock %}
+</body>
+
+</html>
